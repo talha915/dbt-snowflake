@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+- name: source
+  database: DEMO_DB
+  schema: SOURCE
+  freshness:
+    warn_after:
+      count: 1
+      period: hour
+    error_after:
+      count: 2
+      period: hour
+  tables:
+  - name: CUSTOMERS
+    loaded_at_field: SOURCE_TIMESTAMP
