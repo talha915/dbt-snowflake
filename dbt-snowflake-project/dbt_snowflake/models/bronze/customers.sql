@@ -15,9 +15,13 @@ FROM {{ source('source', 'CUSTOMERS') }}
 
 {% if is_incremental() %}
 
-WHERE updated_at > (
-    SELECT MAX(updated_at)
-    FROM {{ this }}
+WHERE updated_at >= DATEADD(
+    'hour',
+    -1,
+    (
+        SELECT MAX(updated_at)
+        FROM {{ this }}
+    )  
 )
 
 {% endif %}
