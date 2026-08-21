@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+- name: source
+  database: DEMO_DB
+  schema: SOURCE
+ 
+  tables:
+  - name: CUSTOMERS
+    

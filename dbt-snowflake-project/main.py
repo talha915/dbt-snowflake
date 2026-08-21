@@ -1,5 +1,5 @@
 def main():
-    print("Hello from dbt-project!")
+    print("Hello from aia-test!")
 
 
 if __name__ == "__main__":
